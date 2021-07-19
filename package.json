@@ -2,7 +2,7 @@
   "name": "robofriends",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://umarzaman9.github.io/robofriends-redux/",
+  "homepage": "https://umarzaman9.github.io/robofriends-testing/",
   "dependencies": {
     "gh-pages": "^3.2.3",
     "react": "^16.14.0",
