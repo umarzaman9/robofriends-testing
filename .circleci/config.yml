@@ -2,25 +2,32 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: alpine:3.7
+      - image: cimg/node:16.5.0
     steps:
-      - run:
-          name: Umar
-          command: |
-            echo 'Hello UmarZ!'
-            echo 'This is the delivery pipeline'
-  zaman:
+      - checkout
+      - run: echo "npm installing"
+      - run: npm install
+      - run: CI=true npm run build
+  test:
     docker:
-      - image: alpine:3.7
+      - image: cimg/node:16.5.0
     steps:
-      - run:
-          name: Zaman
-          command: |
-            echo 'Hello Zaman!'
-            echo 'This is the delivery pipeline'
+      - checkout
+      - run: echo "testing stuff"
+      - run: npm install
+      - run: npm test
+  hithere:
+    docker:
+      - image: cimg/node:16.5.0
+    steps:      
+    - checkout
+    - run: echo "Helloo"          
 workflows:
   version: 2.1
-  umar_and_zaman:
+  build_test_and_lint:
     jobs:
-      - umar
-      - zaman
+      - build
+      - hithere
+      - test:
+          requires:
+            - hithere
