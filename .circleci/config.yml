@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  umar:
     docker:
       - image: alpine:3.7
     steps:
