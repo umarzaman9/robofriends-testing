@@ -7,7 +7,7 @@ jobs:
       - run:
           name: Umar
           command: |
-            echo 'Hello UmarZ!'
+            echo 'Hello Umarrr!'
             echo 'This is the delivery pipeline'
   zaman:
     docker:
